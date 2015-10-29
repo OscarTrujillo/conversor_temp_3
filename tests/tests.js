@@ -12,15 +12,30 @@ describe("Tests", function() {
         expect(a.getn()).to.equal(6);
         expect(a.getc()).to.equal("f");
     });
-   /*
-    it("result", function() {
-        var a = new Temperatura(32e2,"f");
-        expect(a.f2c()).to.equal("1760.0 Celsius");
+
+	it("2P = ERROR", function() {
+      	window.onload = function() {
+        var temp = new Temperatura(2,"P");
+        temp.cambio();
+        expect(converted.innerHTML).to.equal("ERROR! Try something like '-4.2C' instead");
+      }
     });
-    it("result", function() {
-        var a = new Temperatura(32e2,"c");
-        expect(a.c2f()).to.equal("5792.0 Farenheit");
+
+	it("23e3f = 12760", function() {
+      	window.onload = function() {
+        var temp = new Temperatura(23e3,"f");
+        temp.cambio();
+        expect(converted.innerHTML).to.equal("12760");
+      }
     });
-*/
+   it("23e3C = 41432", function() {
+      	window.onload = function() {
+        var temp = new Temperatura(23e3,"C");
+        temp.cambio();
+        expect(converted.innerHTML).to.equal("41432");
+      }
+    });
+
+
 
 });
